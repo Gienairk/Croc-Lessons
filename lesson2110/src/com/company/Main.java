@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 public class Main {
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args)  {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите полный или локальный путь");
         String path = in.nextLine();
