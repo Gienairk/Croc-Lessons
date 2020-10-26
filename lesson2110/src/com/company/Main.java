@@ -33,6 +33,7 @@ public class Main {
 
             }
             System.out.println(count);
+            in.close();
         } catch (FileNotFoundException e) {
             System.out.println(new IllegalArgumentException("По данному пути файл не найден"));
         }
