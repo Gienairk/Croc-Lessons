@@ -53,10 +53,13 @@ public class Main {
     }
 
     public static void printWithoutSlash(List<String>x ){
-        int i;
-        for ( i = 0; i <x.size()-1 ; i++) {
-            System.out.print(x.get(i)+"/");
-        }
-        System.out.println(x.get(i));
+        if( x.size()!=0){
+            int i;
+            for ( i = 0; i <x.size()-1 ; i++) {
+                System.out.print(x.get(i)+"/");
+            }
+            System.out.println(x.get(i));
+        } else
+            System.out.println("./");
     }
 }
