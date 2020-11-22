@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>sells list</name>
+    <sells>
+        <sell id="1" sellersid="1" productid="1" numberOfProducts="100" date="21.10.2020"/>
+        <sell id="2" sellersid="3" productid="2" numberOfProducts="50" date="10.10.2020"/>
+        <sell id="3" sellersid="2" productid="3" numberOfProducts="40" date="12.09.2020"/>
+        <sell id="2" sellersid="3" productid="1" numberOfProducts="90" date="21.10.2020"/>
+        <sell id="3" sellersid="1" productid="1" numberOfProducts="50" date="17.10.2020"/>
+    </sells>
+</company>

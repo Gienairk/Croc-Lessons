@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>products list</name>
+    <products>
+                <product id="1" name="mouse" />
+                <product id="2" name="keyboard" />
+                <product id="3" name="sound columns" />
+    </products>
+</company>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>sellers list</name>
+    <sellers>
+        <seller id="1" surname="Chekhov" name="Maksim" />
+        <seller id="2" surname="Ivanov" name="Ivan" />
+        <seller id="3" surname="Roosevelt" name="Franklin"  />
+    </sellers>
+</company>

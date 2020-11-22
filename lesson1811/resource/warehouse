@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>warehouse list</name>
+    <warehouses>
+        <seller id="1">
+            <products>
+                <product productid="1" cost="100" number="100"/>
+                <product productid="2" cost="10" number="10000"/>
+                <product productid="3" cost="120" number="80"/>
+            </products>
+        </seller>
+        <seller id="2">
+            <products>
+                <product productid="1" cost="40" number="30"/>
+                <product productid="2" cost="700" number="300"/>
+            </products>
+        </seller>
+        <seller id="3">
+            <products>
+                <product productid="1" cost="75" number="105"/>
+                <product productid="2" cost="60" number="10"/>
+                <product productid="3" cost="30" number="20"/>
+            </products>
+        </seller>
+    </warehouses>
+</company>
