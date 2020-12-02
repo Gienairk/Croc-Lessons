@@ -46,7 +46,7 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
 
 
 
-        HashMap answer1=allProduct2();//задание 1 получение количества всех товаров по типам
+        Map answer1=allProduct2();//задание 1 получение количества всех товаров по типам
         System.out.println(answer1);//id + колличество на складах
 
 
@@ -71,7 +71,7 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
 
     }
 
-    private static Document createDocument(HashMap allproduct,double ans21,double ans22) throws ParserConfigurationException {
+    private static Document createDocument(Map allproduct,double ans21,double ans22) throws ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.newDocument();
@@ -105,7 +105,7 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
 
 
     public static double midlSellsByDayDifference(){
-        HashMap<LocalDate,Integer> sellsMap=getSellsMap();
+        Map<LocalDate,Integer> sellsMap=getSellsMap();
         Set<LocalDate> dateList=  sellsMap.keySet();
         ArrayList<LocalDate> listofDate = new ArrayList<>(dateList);
         Collections.sort(listofDate);
@@ -113,21 +113,24 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
         Long days = ChronoUnit.DAYS.between(listofDate.get(0), listofDate.get(listsize-1));//разница меж первой и последней продажей
         ArrayList<Integer>allSellsList=new ArrayList<>(sellsMap.values());
 
-        Optional<Integer> sum=allSellsList.stream()
-                .reduce((x,y)->x+y);
-        //System.out.println(sum);
+        Integer sum=allSellsList.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
 
-        return  (double) sum.get()/days;
+        System.out.println(sum);
+
+        return  (double) sum/days;
     }
 
 
     public static double midlSellsBySellsColDay(){
-        HashMap<Date,Integer> sellsMap=getSellsMap();
+        Map<LocalDate,Integer> sellsMap=getSellsMap();
         ArrayList<Integer>allSellsList=new ArrayList<>(sellsMap.values());
-        Optional<Integer> sum=allSellsList.stream()
-                .reduce((x,y)->x+y);
+        Integer sum=allSellsList.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
 
-        return (double) sum.get()/allSellsList.size();
+        return (double) sum/allSellsList.size();
     }
 
 
@@ -148,10 +151,10 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
         return sellsMap;
     }*/
 
-    public static HashMap getSellsMap(){
+    public static Map<LocalDate, Integer> getSellsMap(){
         Map<LocalDate, Integer> col1=sells.stream().collect(
                 toMap(Sells::getDate,Sells::getNumberOfProducts,(i1, i2) -> (i1+i2)));
-        return (HashMap) col1;
+        return  col1;
     }
 
     /*public static HashMap<Integer, Integer> allProduct(){ версия метода для 1 задания без стрима
@@ -170,10 +173,10 @@ private static ArrayList<Warehouse> warehouses=new ArrayList<>();
         return col;
     }*/
 
-    public static HashMap<Integer, Integer> allProduct2(){
+    public static Map<Integer, Integer> allProduct2(){
         Map<Integer, Integer> col1=warehouses.stream().collect(
                 toMap(Warehouse::getProductid,Warehouse::getNumber,(i1, i2) -> (i1+i2)));
-        return (HashMap<Integer, Integer>) col1;
+        return  col1;
     }
 
 /*
